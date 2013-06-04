@@ -1,7 +1,7 @@
 /*!
  * jQuery UI Numeric Input Extension
  *
- * Version 1.0
+ * Version 1.0.1
  *
  * Copyright (c) 2013 César Kästli (cesarkastli@gmail.com)
  *
@@ -75,6 +75,7 @@
                     else if (this.options.negativeSign == character) {
 
                         return this.options.allowNegative
+                            && (separatorPosition == -1 || this.selectionEnd() != separatorPosition)
                             && (value.indexOf(character) == -1 || this.selectionStart() == 0 && this.selectionEnd() > 0)
                             && this.selectionStart() == 0;
                     }
